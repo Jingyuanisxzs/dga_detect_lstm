@@ -20,7 +20,7 @@ if __name__ == '__main__':
     batch_size = 100 # 批处理大小
     epochs = 1       # 训练轮数
     trainDataPath = './test_data/dga-feed_test.txt'  # 原始数据文件路径
-    modelPath = 'dga_by_lstm_model-attend0712.h5'  # 模型文件保存路径或读取路径
+    modelPath = 'dga_by_lstm_model-attend0107.h5'  # 模型文件保存路径或读取路径
     resultPath = './test_data/dga-feed_result.txt'
 
     # 读取配置文件
