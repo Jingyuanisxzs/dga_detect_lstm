@@ -1,4 +1,4 @@
-dataPath = './train_data/dga-feed_1.txt'
+dataPath = './train_data/dga-feed.txt'
 
 with open(dataPath, "r") as f:
     data = f.read().split('\n')
