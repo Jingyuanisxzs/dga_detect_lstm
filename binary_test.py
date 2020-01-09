@@ -1,27 +1,13 @@
-#!/usr/bin/env python
-# encoding: utf-8
-'''
-@author: caopeng
-@license: (C) Copyright 2016-2020, Big Bird Corporation Limited.
-@contact: deamoncao100@gmail.com
-@software: garner
-@file: dga_test.py
-@time: 2019/7/11 22:38
-@desc:
-'''
-from model.LstmModel import LstmModel
-from model.LstmWithAttentionModel import LstmWithAttentionModel
+from model.LstmWithAttentionModel_binary import LstmWithAttentionModel_binary
 import codecs
 import numpy as np
-import datetime
 
 if __name__ == '__main__':
-    
     batch_size = 100 # 批处理大小
     epochs = 1       # 训练轮数
-    trainDataPath = './test_data/dga-feed_test.txt'  # 原始数据文件路径
-    modelPath = 'dga_by_lstm_model-attend0107.h5'  # 模型文件保存路径或读取路径
-    resultPath = './test_data/dga-feed_result.txt'
+    trainDataPath = './test_data/binary_training_test.txt'  # 原始数据文件路径
+    modelPath = 'binary_classification_model_0108.h5'  # 模型文件保存路径或读取路径
+    resultPath = './test_data/binary_test_result.txt'
 
     # 读取配置文件
     charList = {}
@@ -36,19 +22,16 @@ if __name__ == '__main__':
             charList[temp] = ii
             ii += 1
 
-    #
-    #  训练数据
-    # 转换数据格式
     x_data_sum = []
+
     trainFile = codecs.open(filename=trainDataPath, mode='r', encoding='utf-8', errors='ignore')
     lines = trainFile.readlines()
+
     for line in lines:
         if line.strip('\n').strip('\r').strip(' ') == '':
             continue
-
         x_data = []
         x = line.strip('\n').strip('\r').strip(' ').split(',')[0]
-
         for char in x:
             try:
                 x_data.append(charList[char])
@@ -60,8 +43,5 @@ if __name__ == '__main__':
 
     x_data_sum = np.array(x_data_sum)
 
-    # LstmModel
-    # lstmModel = LstmModel()
-    # lstmModel.predict(x_data_sum, batch_size, modelPath, resultPath)
-    lstmWithAttentionModel  = LstmWithAttentionModel()
-    lstmWithAttentionModel.predict(x_data_sum, batch_size, modelPath, resultPath)
+    lstmWithAttentionModel_binary  = LstmWithAttentionModel_binary()
+    lstmWithAttentionModel_binary.predict(x_data_sum, batch_size, modelPath, resultPath)

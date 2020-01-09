@@ -7,7 +7,7 @@ if __name__ == '__main__':
     starttime = datetime.datetime.now()
     batch_size = 100 # 批处理大小
     epochs = 30       # 训练轮数
-    trainDataPath = './train_data/binary_training.txt'  # 原始数据文件路径
+    trainDataPath = './train_data/binary_training_1.txt'  # 原始数据文件路径
     modelPath = 'binary_classification_model_0108.h5'  # 模型文件保存路径或读取路径
 
     # 读取配置文件

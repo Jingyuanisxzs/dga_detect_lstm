@@ -2,9 +2,9 @@ import random
 
 
 if __name__ == '__main__':
-    data_path = './train_data/dga-feed_1.txt'
-    train_data_path = './train_data/dga-feed_train.txt'
-    test_data_path = './test_data/dga-feed_test.txt'
+    data_path = './train_data/binary_training.txt'
+    train_data_path = './train_data/binary_training_1.txt'
+    test_data_path = './test_data/binary_training_test.txt'
 
 
 
