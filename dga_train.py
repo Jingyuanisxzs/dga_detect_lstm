@@ -18,7 +18,7 @@ import datetime
 
 if __name__ == '__main__':
     starttime = datetime.datetime.now()
-    batch_size = 50 # 批处理大小
+    batch_size = 100 # 批处理大小
     epochs = 30       # 训练轮数
     trainDataPath = './train_data/dga-feed_train.txt'  # 原始数据文件路径
     modelPath = 'dga_by_lstm_model-attend0107.h5'  # 模型文件保存路径或读取路径
