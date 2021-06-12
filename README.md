@@ -1,5 +1,3 @@
-# dga_detect_with_lstm
-
 # DGA Detection model based on LSTM
 
 # Model
